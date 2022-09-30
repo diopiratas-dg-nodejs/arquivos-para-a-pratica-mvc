@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <title>Meu Porfolio - Sobre</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
+  <%- include('./partials/header') %>
   <body>
     <div class="mvc-top">
       <div class="mvc-bar" id="myNavbar">
-        <a href="/" class="mvc-bar-item mvc-button">HOME</a>
+        <a href="/" class="mvc-bar-item mvc-button"> HOME</a>
         <a href="/about" class="mvc-bar-item mvc-button mvc-hide-small"
           ><i class="fa fa-user"></i> SOBRE</a
         >
@@ -22,18 +14,18 @@
       </div>
     </div>
 
-    <div class="bgimg-2 mvc-display-container mvc-opacity-min" id="home">
+    <div class="bgimg-1 mvc-display-container mvc-opacity-min" id="home">
       <div class="mvc-display-middle" style="white-space: nowrap">
         <span
           class="mvc-center mvc-padding-large mvc-black mvc-xlarge mvc-wide mvc-animate-opacity"
-          >SOBRE</span
+          > MEU PORFOLIO</span
         >
       </div>
     </div>
 
     <div class="mvc-content mvc-container mvc-padding-64" id="about">
-      <h3 class="mvc-center">Amo fotografia</h3>
-      <p class="mvc-center"><em>é um fotógrafo amador...</em></p>
+      <h3 class="mvc-center">Meu Porfolio</h3>
+      <p class="mvc-center"><em>Amo fotografia!</em></p>
       <p>
         Criamos um site/blog fictício "pessoal", e nosso personagem é um fotógrafo. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -48,22 +40,24 @@
       </p>
     </div>
 
-     <!-- Footer -->
-    <footer
-      class="mvc-center mvc-black mvc-padding-64 mvc-opacity mvc-hover-opacity-off"
-    >
-      <a href="#home" class="mvc-button mvc-light-grey"
-        ><i class="fa fa-arrow-up mvc-margin-right"></i>Para o topo</a
-      >
-      <div class="mvc-xlarge mvc-section">
-        <i class="fa fa-facebook-official mvc-hover-opacity"></i>
-        <i class="fa fa-instagram mvc-hover-opacity"></i>
-        <i class="fa fa-snapchat mvc-hover-opacity"></i>
-        <i class="fa fa-pinterest-p mvc-hover-opacity"></i>
-        <i class="fa fa-twitter mvc-hover-opacity"></i>
-        <i class="fa fa-linkedin mvc-hover-opacity"></i>
+    <div class="mvc-content mvc-container mvc-padding-64" id="portfolio">
+      <h3 class="mvc-center">MEU TRABALHO</h3>
+      <p class="mvc-center">
+        <em>Aqui tem um dos meus últimos trabalhos.</em>
+      </p>
+      <br />
+
+      <div class="mvc-container-img mvc-row-padding mvc-center">
+        <% portfolio.forEach(function(port) { %>            
+          <div>
+            <img src=<%= port %> class="mvc-img" />
+          </div>
+        <% }) %>
+        
       </div>
-    </footer>
+    </div>
+
+    <%- include('./partials/footer') %>
 
     <script>
       // Change style of navbar on scroll

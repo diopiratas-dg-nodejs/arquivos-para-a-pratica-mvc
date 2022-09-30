@@ -2,7 +2,12 @@ const path = require('path')
 
 const homeController = {
     index: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/home.html'))
+        let portfolio = ['/images/cathedral.jpg', '/images/road.jpg', '/images/european.jpg', '/images/bridge.jpg']
+
+        res.render('home', {
+            title: 'Home Portfolio',
+            portfolio
+        })
     }
 }
 
